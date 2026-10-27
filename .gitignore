@@ -1,0 +1,11 @@
+# Independent upstream source checkouts are recorded in support/components.lock.json.
+/src/
+
+# Project-local downloads, generated inventories, build products and logs.
+/.cache/
+/build/
+/stage/
+/logs/
+__pycache__/
+*.pyc
+.DS_Store
