@@ -1,7 +1,7 @@
 #!/bin/sh
 # Build pinned editable components without installing into the Homebrew prefix.
 set -eu
-root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+root=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
 brew=${HOMEBREW_BREW_FILE:-/opt/homebrew/bin/brew}
 prefix=$("$brew" --prefix)
 stage="$root/stage/dev"

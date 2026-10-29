@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
-root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+root=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
 tex=${LUALATEX:-/Library/TeX/texbin/lualatex}
 for project in "Project One" "Project Two"; do
   directory="$root/build/fixtures/$project"
