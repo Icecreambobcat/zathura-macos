@@ -1,0 +1,28 @@
+[submodule "src/zathura"]
+	path = src/zathura
+	url = https://github.com/Icecreambobcat/zathura.git
+	branch = macos
+[submodule "src/synctex"]
+	path = src/synctex
+	url = https://github.com/Icecreambobcat/synctex.git
+	branch = macos
+[submodule "src/zathura-pdf-mupdf"]
+	path = src/zathura-pdf-mupdf
+	url = https://github.com/Icecreambobcat/zathura-pdf-mupdf.git
+	branch = macos
+[submodule "src/girara"]
+	path = src/girara
+	url = https://github.com/pwmt/girara.git
+[submodule "src/zathura-djvu"]
+	path = src/zathura-djvu
+	url = https://github.com/pwmt/zathura-djvu.git
+[submodule "src/zathura-ps"]
+	path = src/zathura-ps
+	url = https://github.com/pwmt/zathura-ps.git
+[submodule "src/zathura-cb"]
+	path = src/zathura-cb
+	url = https://github.com/pwmt/zathura-cb.git
+[submodule "packaging/homebrew-personal"]
+	path = packaging/homebrew-personal
+	url = https://github.com/Icecreambobcat/homebrew-personal.git
+	branch = main

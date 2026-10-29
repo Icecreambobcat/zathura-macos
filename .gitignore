@@ -1,5 +1,4 @@
-# Independent upstream source checkouts are recorded in support/components.lock.json.
-/src/
+# Component checkouts are tracked as submodules under src/.
 
 # Project-local downloads, generated inventories, build products and logs.
 /.cache/

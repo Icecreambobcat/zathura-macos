@@ -45,7 +45,7 @@ def main():
     static_flags = shlex.split(query("--static", "--libs"))
     check("-lz" in static_flags, "Expose the private zlib dependency for static consumers")
 
-    fixture_root = root / "build" / "metadata-test-fixtures"
+    fixture_root = root / "build" / "fixtures" / "metadata"
     fixture_root.mkdir(parents=True, exist_ok=True)
     compiler = shlex.split(env.get("CC", "cc"))
     with tempfile.TemporaryDirectory(prefix="synctex-", dir=fixture_root) as directory:
