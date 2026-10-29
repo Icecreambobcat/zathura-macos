@@ -114,9 +114,10 @@ If moving this workspace, repair the linked worktree paths with `git worktree re
 When changing the core, bump both `zathura-core` and `zathura`: the app contains a copy
 of the core executable. Rebuild all plugins if the plugin ABI changes.
 
-The tap's Intel and Apple Silicon test-bot jobs build bottle artifacts for pull
-requests. The manual workflow builds the full seven-formula stack. Its existing
-`pr-pull` publishing workflow merges tested pull requests and publishes bottles.
+Zathura-related pull requests and manual runs build the full seven-formula stack.
+The Apple Silicon job requires all seven bottles. Intel jobs may skip builds when
+dependencies lack compatible bottles; a green job alone does not verify them.
+The `pr-pull` workflow merges tested pull requests and publishes bottles.
 Direct source pushes alone do not publish bottles.
 
 For a fresh local bottle build, use `brew install --build-bottle <formula>` followed
