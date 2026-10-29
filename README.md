@@ -2,7 +2,8 @@
 
 Development workspace for the native multi-window viewer and its Homebrew packages.
 The installable app lives in [icecreambobcat/personal](https://github.com/Icecreambobcat/homebrew-personal).
-It uses Homebrew libraries and is not a standalone app bundle.
+The packages require Apple Silicon and macOS 27 or later. They use Homebrew libraries
+and are not standalone app bundles.
 
 ## Sources
 
@@ -97,9 +98,8 @@ Homebrew type/style/audit/formula/linkage/signature checks. Physical Ctrl-clicks
 both installed-app PDFs reached two separate VimTeX editors at the correct source
 and line (3:1), using `support/test-vimtex.vim` and a test-local cache. AppKit confirmed
 one regular native application, and Launch Services listed the installed app as a
-PDF opener candidate without changing defaults. Intel runtime behaviour, reboot
-recovery and reconnecting an already-running viewer after its bus dies require
-separate verification.
+PDF opener candidate without changing defaults. Reboot recovery and reconnecting
+an already-running viewer after its bus dies require separate verification.
 
 ## Packaging and bottles
 
@@ -114,9 +114,11 @@ If moving this workspace, repair the linked worktree paths with `git worktree re
 When changing the core, bump both `zathura-core` and `zathura`: the app contains a copy
 of the core executable. Rebuild all plugins if the plugin ABI changes.
 
-Zathura-related pull requests and manual runs build the full seven-formula stack.
-The Apple Silicon job requires all seven bottles. Intel jobs may skip builds when
-dependencies lack compatible bottles; a green job alone does not verify them.
+Zathura-related pull requests and manual runs build the full seven-formula stack
+on macOS 27/Apple Silicon using GitHub's
+[`xcode-27` runner](https://github.com/actions/runner-images#available-images).
+The job requires all seven `arm64_golden_gate` bottles. Intel builds are not supported.
+Validate local source builds, bottle pours, strict linkage and formula tests before CI.
 The `pr-pull` workflow merges tested pull requests and publishes bottles.
 Direct source pushes alone do not publish bottles.
 

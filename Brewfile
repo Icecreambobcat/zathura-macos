@@ -16,6 +16,7 @@ brew "actionlint"
 
 # Viewer libraries
 brew "gtk4"
+brew "gdk-pixbuf"
 brew "glib"
 brew "cairo"
 brew "json-glib"
