@@ -104,10 +104,13 @@ separate verification.
 ## Packaging and bottles
 
 The tap consumes immutable fork archives, not patches copied from this checkout.
-On this machine, Homebrew's existing tap path is a symlink to
-`packaging/homebrew-personal`, so there is only one editable packaging checkout.
-Fresh clones can use a normal `brew tap icecreambobcat/personal` for installation;
-keep the workspace submodule for reviewing and editing packaging.
+On this machine, Homebrew's installation tap is a real Git worktree sharing the
+packaging submodule's history. This retains Homebrew's normal tap identity in child
+processes; a symlinked tap does not. Edit packaging in the workspace branch, then
+fast-forward the installation worktree to the tested/published commit. The second
+checkout contains formula metadata and assets, not copied dependency libraries.
+Fresh clones can use a normal `brew tap icecreambobcat/personal` for installation.
+If moving this workspace, repair the linked worktree paths with `git worktree repair`.
 When changing the core, bump both `zathura-core` and `zathura`: the app contains a copy
 of the core executable. Rebuild all plugins if the plugin ABI changes.
 
