@@ -10,6 +10,10 @@ brew "pkgconf"
 brew "gettext"
 brew "python@3.15"
 
+# Packaging checks
+brew "shellcheck"
+brew "actionlint"
+
 # Viewer libraries
 brew "gtk4"
 brew "glib"
