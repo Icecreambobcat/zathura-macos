@@ -119,6 +119,11 @@ on macOS 27/Apple Silicon using GitHub's
 [`xcode-27` runner](https://github.com/actions/runner-images#available-images).
 The job requires all seven `arm64_golden_gate` bottles. Intel builds are not supported.
 Validate local source builds, bottle pours, strict linkage and formula tests before CI.
+The tap README records the dependency-upgrade and release procedure, including receipt checks,
+real-render smoke tests and stable plugin links after bottle relocation.
+Run `python3 support/verify-local-bottles.py build/maintenance-bottles` after generating
+all seven bottles to test named-formula loopback pours, receipts, linkage and rendering.
+It restores temporary bottle metadata even if validation fails.
 The `pr-pull` workflow merges tested pull requests and publishes bottles.
 Direct source pushes alone do not publish bottles.
 
